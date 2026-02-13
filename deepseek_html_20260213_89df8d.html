@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>unlock my heart · abha & abhay 💋❤️</title>
+    <!-- soft & bold romantic fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 30%, #ffe6f0, #ffd9e8);
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* floating background hearts & kisses — dreamscape */
+        .floating-hero {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .float-item {
+            position: absolute;
+            opacity: 0.5;
+            color: #ff4d6d;
+            font-size: 2rem;
+            animation: float 18s infinite ease-in-out;
+            user-select: none;
+        }
+
+        .float-item:nth-child(1) { top: 10%; left: 5%; font-size: 3rem; animation-delay: 0s; opacity: 0.2; color: #ffb3c6; }
+        .float-item:nth-child(2) { top: 70%; left: 85%; font-size: 4rem; animation-delay: 2s; opacity: 0.2; color: #ff8fa3; }
+        .float-item:nth-child(3) { top: 40%; left: 15%; font-size: 2.8rem; animation-delay: 1s; opacity: 0.2; color: #fb6f92; }
+        .float-item:nth-child(4) { top: 80%; left: 30%; font-size: 3.5rem; animation-delay: 3s; opacity: 0.18; color: #ffafcc; }
+        .float-item:nth-child(5) { top: 20%; left: 70%; font-size: 3.2rem; animation-delay: 5s; opacity: 0.2; color: #ffc2d1; }
+        .float-item:nth-child(6) { top: 55%; left: 50%; font-size: 4rem; animation-delay: 7s; opacity: 0.15; color: #ffe5ec; transform: rotate(-10deg); }
+        .float-item:nth-child(7) { top: 15%; left: 40%; font-size: 2.5rem; animation-delay: 2.5s; opacity: 0.25; color: #ff99ac; }
+        .float-item:nth-child(8) { top: 88%; left: 68%; font-size: 3.8rem; animation-delay: 4.2s; opacity: 0.15; color: #ffb3c6; }
+        .float-item:nth-child(9) { top: 33%; left: 92%; font-size: 2.2rem; animation-delay: 6s; opacity: 0.2; color: #ff7f8f; }
+        .float-item:nth-child(10) { top: 62%; left: 8%; font-size: 3rem; animation-delay: 0.8s; opacity: 0.2; color: #fb6f92; }
+        .float-item:nth-child(11) { top: 48%; left: 74%; font-size: 2.8rem; animation-delay: 9s; opacity: 0.25; color: #ffafcc; }
+        .float-item:nth-child(12) { top: 5%; left: 88%; font-size: 3.6rem; animation-delay: 11s; opacity: 0.18; color: #ff8fa3; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* ---------- UNLOCK CONTAINER ---------- */
+        .unlock-wrapper {
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ---------- LOCK SCREEN / TAP TO UNLOCK (initial) ---------- */
+        .heart-lock {
+            background: rgba(255, 225, 235, 0.75);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-radius: 80px 80px 80px 80px;
+            border: 3px solid rgba(255, 120, 140, 0.7);
+            box-shadow: 0 30px 50px rgba(200, 30, 60, 0.25),
+                        0 0 0 14px rgba(255, 200, 210, 0.3),
+                        0 0 0 20px rgba(255, 170, 190, 0.15);
+            padding: 3.5rem 2.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255, 105, 135, 0.3);
+            transition: all 0.4s ease;
+            animation: softGlow 3s infinite alternate;
+        }
+
+        @keyframes softGlow {
+            0% { box-shadow: 0 30px 50px rgba(200, 30, 60, 0.25), 0 0 0 14px rgba(255, 200, 210, 0.3), 0 0 0 20px rgba(255, 170, 190, 0.15); }
+            100% { box-shadow: 0 40px 70px rgba(230, 50, 80, 0.4), 0 0 0 18px rgba(255, 160, 180, 0.4), 0 0 0 28px rgba(255, 140, 170, 0.2); }
+        }
+
+        .heart-lock:hover {
+            transform: scale(1.02);
+            border-color: #ff8c9f;
+        }
+
+        .locked-heart-icon {
+            font-size: 7rem;
+            line-height: 1;
+            margin-bottom: 0.8rem;
+            filter: drop-shadow(0 12px 15px #ff5c7c);
+            animation: heartbeat 1.8s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.08); }
+            70% { transform: scale(1); }
+        }
+
+        .unlock-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #9d1f3a;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 0 #ffe6eb, 4px 4px 0 rgba(255, 100, 130, 0.2);
+            margin-bottom: 0.8rem;
+            pointer-events: none;
+        }
+
+        .unlock-sub {
+            font-size: 1.5rem;
+            color: #b13b4b;
+            background: rgba(255, 245, 240, 0.7);
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            border: 2px solid #ffa5b4;
+            backdrop-filter: blur(2px);
+            pointer-events: none;
+        }
+
+        .tiny-kiss-lock {
+            margin-top: 2rem;
+            font-size: 2rem;
+            opacity: 0.8;
+            letter-spacing: 12px;
+            pointer-events: none;
+        }
+
+        /* ---------- KISS LETTER CARD (initially hidden) ---------- */
+        .kiss-letter {
+            max-width: 850px;
+            width: 100%;
+            background: rgba(255, 245, 250, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 56px 56px 56px 56px;
+            border: 2px solid rgba(255, 182, 193, 0.7);
+            box-shadow: 0 25px 45px rgba(235, 60, 90, 0.2),
+                        0 0 0 8px rgba(255, 230, 240, 0.5),
+                        0 0 0 12px rgba(255, 200, 210, 0.25);
+            padding: 2.8rem 2.5rem;
+            position: relative;
+            z-index: 25;
+            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .kiss-letter.reveal {
+            display: block;
+            animation: softVibrantReveal 0.9s forwards;
+        }
+
+        @keyframes softVibrantReveal {
+            0% { opacity: 0; transform: scale(0.92); box-shadow: 0 0 0 rgba(255, 80, 120, 0); }
+            100% { opacity: 1; transform: scale(1); box-shadow: 0 30px 60px rgba(235, 70, 100, 0.3), 0 0 0 12px rgba(255, 190, 200, 0.4), 0 0 0 20px rgba(255, 150, 180, 0.2); }
+        }
+
+        /* kiss seal (bold) */
+        .kiss-seal {
+            position: absolute;
+            top: -20px;
+            right: 30px;
+            background: #d62828;
+            color: white;
+            font-size: 2rem;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(210, 40, 40, 0.4), 0 0 0 6px #ffb3b3;
+            transform: rotate(10deg);
+            border: 3px solid #fff0f3;
+        }
+
+        /* HAPPY KISS DAY HEADLINE (very top) */
+        .happy-kiss-headline {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .happy-kiss-headline h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #b21e35;
+            text-shadow: 2px 2px 0 #ffe6eb, 6px 6px 15px rgba(255, 80, 120, 0.3);
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            background: linear-gradient(145deg, #ffecf0, #ffe3e8);
+            display: inline-block;
+            padding: 0.5rem 2.8rem;
+            border-radius: 80px;
+            border: 3px solid #ff99ac;
+            box-shadow: 0 8px 0 #a4133c, 0 15px 30px #ffb6c1;
+            backdrop-filter: blur(4px);
+        }
+        
+        .happy-kiss-headline h1 span {
+            font-size: 3.2rem;
+            margin: 0 5px;
+        }
+
+        .valentine-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .day-tag {
+            background: #ff4d6d;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 0 #a4133c, 0 10px 25px #ff8fa3;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .sub-emoji {
+            font-size: 2.4rem;
+            background: rgba(255,255,240,0.6);
+            border-radius: 50px;
+            padding: 0 0.8rem;
+        }
+
+        .couple-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #590d22;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.1rem;
+            display: flex;
+            gap: 15px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            text-shadow: 1px 1px 0 #ffe6eb, 3px 3px 0 rgba(255, 105, 135, 0.2);
+        }
+
+        /* ABHA & ABHAY IN BOLD RED */
+        .couple-title .names {
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            color: #b21e35;
+            font-size: 2.6rem;
+            font-weight: 800;
+            text-shadow: 0 0 8px #ffb3b3;
+        }
+
+        .letter-body {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .greeting {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #590d22;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .greeting span {
+            background: #fff0f3;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            display: inline-block;
+            box-shadow: 0 4px 8px #ffccd5;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #2d1a1c;
+            font-weight: 400;
+            background: rgba(255, 240, 245, 0.6);
+            padding: 1.8rem 2rem;
+            border-radius: 48px 48px 48px 8px;
+            backdrop-filter: blur(4px);
+            border: 2px dashed #ff8fa3;
+            margin: 30px 0;
+            box-shadow: inset 0 0 25px #ffe4e9, 0 10px 15px rgba(247, 127, 150, 0.2);
+            white-space: pre-line;
+        }
+
+        .message strong {
+            color: #b21e35;
+            font-weight: 700;
+            background: linear-gradient(145deg, #ffccd5, #ffe3e8);
+            padding: 0.1rem 0.3rem;
+            border-radius: 8px;
+        }
+
+        .floating-kisses {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 2.5rem;
+            margin: 10px 0 20px;
+            filter: drop-shadow(0 8px 12px #ff8fa3);
+        }
+
+        .signature {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #590d22;
+            text-align: right;
+            font-family: 'Playfair Display', serif;
+            border-top: 3px wavy #ffb3c6;
+            padding-top: 25px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .signature-right {
+            font-style: italic;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        /* Abhay signature in red */
+        .signature-right span:nth-child(2) {
+            color: #b21e35 !important;
+            font-size: 2.4rem;
+            font-weight: 800;
+            text-shadow: 0 0 6px #ffa0a0;
+        }
+
+        .virtual-kiss-btn {
+            background: linear-gradient(145deg, #ff4d6d, #c9184a);
+            border: none;
+            padding: 1rem 2.2rem;
+            border-radius: 80px;
+            color: white;
+            font-size: 1.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin: 40px auto 20px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255, 105, 135, 0.3);
+            transition: 0.2s ease;
+            border: 3px solid #ffe6eb;
+            box-shadow: 0 10px 0 #590d22, 0 15px 35px #ff4d6d;
+            width: fit-content;
+        }
+
+        .virtual-kiss-btn:active {
+            transform: translateY(10px);
+            box-shadow: 0 4px 0 #590d22, 0 18px 35px #ff4d6d;
+        }
+
+        .kiss-feedback {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #a4133c;
+            min-height: 60px;
+            padding: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .kiss-letter { padding: 2rem 1.5rem; }
+            .heart-lock { padding: 2.5rem 1.5rem; }
+            .unlock-text { font-size: 2.2rem; }
+            .happy-kiss-headline h1 { font-size: 2.2rem; padding: 0.4rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- floating kisses + hearts background (dreamy) -->
+    <div class="floating-hero">
+        <div class="float-item">💋</div>
+        <div class="float-item">❤️</div>
+        <div class="float-item">💋</div>
+        <div class="float-item">❤️</div>
+        <div class="float-item">💋</div>
+        <div class="float-item">❤️</div>
+        <div class="float-item">💋</div>
+        <div class="float-item">❤️</div>
+        <div class="float-item">💋</div>
+        <div class="float-item">❤️</div>
+        <div class="float-item">💋</div>
+        <div class="float-item">❤️</div>
+        <div class="float-item">💋</div>
+        <div class="float-item">❤️</div>
+        <div class="float-item">💋</div>
+    </div>
+
+    <!-- UNLOCK WRAPPER : contains both lock screen and letter -->
+    <div class="unlock-wrapper">
+        <!-- TAP TO UNLOCK MY HEART screen (initial) -->
+        <div id="heartLockScreen" class="heart-lock">
+            <div class="locked-heart-icon">❤️‍🔥</div>
+            <div class="unlock-text">tap to unlock my heart</div>
+            <div class="unlock-sub">for Abha 💋 only</div>
+            <div class="tiny-kiss-lock">💋 ❤️ 💋</div>
+            <div style="margin-top: 1.5rem; font-size: 1.3rem; color: #a7334a; font-weight: 600; pointer-events: none;">softly · boldly · yours</div>
+        </div>
+
+        <!-- KISS DAY LETTER — hidden until unlocked -->
+        <div id="kissLetterCard" class="kiss-letter">
+            <div class="kiss-seal">
+                <span>💋❤️</span>
+            </div>
+
+            <div class="happy-kiss-headline">
+                <h1>
+                    <span>💋</span> Happy Kiss Day <span>💋</span>
+                </h1>
+            </div>
+
+            <div class="valentine-badge">
+                <span class="day-tag">💋 KISS DAY 💋</span>
+                <span class="sub-emoji">❤️‍🔥 💋 🖤</span>
+            </div>
+
+            <div class="couple-title">
+                <span>👩‍💻</span>
+                <span class="names">Abha ❤️ Abhay</span>
+                <span>👨‍💻</span>
+            </div>
+
+            <div class="letter-body">
+                <div class="greeting">
+                    <span>💋 My Dearest Abha,</span>
+                </div>
+                
+                <div class="message">
+                    <strong>Happy Kiss Day, my love 💋❤️</strong><br><br>
+                    Today is about kisses — soft, loving, and full of emotions. And even though miles separate us, my heart still finds its way to you.<br><br>
+                    In these five years, we've shared so many feelings, so many dreams, so many silent moments where words weren't even needed. If I were with you right now, I would gently hold your face, look into your eyes, and place the softest kiss on your forehead — a kiss full of respect, love, and forever.<br><br>
+                    Not just a kiss of romance…<br>
+                    But a kiss that says:<br>
+                    "I'm yours."<br>
+                    "I choose you."<br>
+                    "I will always stay."<br><br>
+                    Sometimes I imagine the day when distance won't exist between us. The first real kiss after all this waiting — it won't just be a kiss, it will be five years of love, patience, loyalty, and longing finally meeting.<br><br>
+                    Until that day comes, I'm sending you my sweetest virtual kiss 💋✨<br>
+                    Close your eyes and feel it.<br><br>
+                    You are my love, my peace, my forever.<br>
+                    <span style="font-size:1.8rem; display: block; margin-top: 15px;">❤️‍🔥 💋 ❤️‍🔥</span>
+                </div>
+            </div>
+            
+            <div class="floating-kisses">
+                <span>💋</span>
+                <span>❤️</span>
+                <span>💋</span>
+                <span>❤️</span>
+                <span>💋</span>
+            </div>
+
+            <div class="signature">
+                <span class="signature-left">💘✨</span>
+                <span class="signature-right">
+                    <span style="font-size: 1.9rem;">Always yours,</span>
+                    <span style="font-size: 2.4rem; font-weight: 800; color: #b21e35;">Abhay</span>
+                    <span style="font-size: 1.2rem; font-weight: 400;">❤️ five years & forever</span>
+                </span>
+            </div>
+            
+            <button id="sendKissBtn" class="virtual-kiss-btn">
+                <span>💋</span> send my virtual kiss <span>💋</span>
+            </button>
+            <div id="kissFeedback" class="kiss-feedback">
+                ✨ close your eyes, feel the kiss... ✨
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: #a01030; font-weight: 500;">
+                <span>❤️ happy kiss day abha ❤️</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            "use strict";
+            
+            // Wait for DOM to be fully loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                // Get elements
+                const lockScreen = document.getElementById('heartLockScreen');
+                const letterCard = document.getElementById('kissLetterCard');
+                const kissBtn = document.getElementById('sendKissBtn');
+                const feedbackEl = document.getElementById('kissFeedback');
+                
+                // Make sure elements exist
+                if (!lockScreen || !letterCard) {
+                    console.error('Required elements not found!');
+                    return;
+                }
+                
+                // Function to create burst emoji
+                function createBurstEmoji(emoji) {
+                    const burstContainer = document.querySelector('.floating-hero');
+                    if (!burstContainer) return;
+                    const span = document.createElement('span');
+                    span.innerHTML = emoji;
+                    span.style.position = 'absolute';
+                    span.style.left = Math.random() * 100 + '%';
+                    span.style.top = Math.random() * 100 + '%';
+                    span.style.fontSize = (Math.random() * 2.5 + 1.8) + 'rem';
+                    span.style.opacity = '0.9';
+                    span.style.animation = 'float 3s ease-out';
+                    span.style.pointerEvents = 'none';
+                    span.style.zIndex = '999';
+                    span.style.color = '#ff4d6d';
+                    span.style.filter = 'drop-shadow(0 0 8px #ffa0b0)';
+                    burstContainer.appendChild(span);
+                    setTimeout(() => { span.remove(); }, 3200);
+                }
+
+                // UNLOCK FUNCTION - supports both click and touch
+                function unlockHeart(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Fade out lock screen
+                    lockScreen.style.transition = 'opacity 0.5s, transform 0.4s';
+                    lockScreen.style.opacity = '0';
+                    lockScreen.style.transform = 'scale(0.85)';
+                    
+                    // Hide lock screen and show letter after fade
+                    setTimeout(() => {
+                        lockScreen.style.display = 'none';
+                        letterCard.style.display = 'block';
+                        
+                        // Trigger reveal animation
+                        setTimeout(() => {
+                            letterCard.classList.add('reveal');
+                        }, 20);
+                        
+                        // Celebration burst
+                        for (let i = 0; i < 20; i++) {
+                            createBurstEmoji(i % 2 === 0 ? '💋' : '❤️');
+                        }
+                    }, 450);
+                }
+
+                // Add event listeners for both click and touch
+                lockScreen.addEventListener('click', unlockHeart);
+                lockScreen.addEventListener('touchstart', function(e) {
+                    e.preventDefault(); // Prevents double-firing on mobile
+                }, { passive: false });
+                lockScreen.addEventListener('touchend', unlockHeart);
+
+                // Virtual kiss button functionality
+                if (kissBtn && feedbackEl) {
+                    const kissMessages = [
+                        "💋✨ a soft kiss lands on your forehead... you smile, i'm yours. ✨💋",
+                        "❤️ a kiss full of five years — patience, loyalty, forever. i choose you. ❤️",
+                        "💋💖 miles fade... your lips feel this virtual kiss, close your eyes, my love. 💖💋",
+                        "✨ sending you the sweetest kiss. it whispers: 'i will always stay.' ✨",
+                        "💘 one gentle kiss — all my love, across every mile. happy kiss day abha. 💘",
+                        "❤️‍🔥 forehead kiss, just like i promised. you are my peace. ❤️‍🔥",
+                        "💋 this kiss carries 5 years of longing, until we meet. 💋",
+                        "🌹 every kiss emoji is my lips finding yours. feel it? 🌹",
+                        "✨ i'm yours, i choose you, i will always stay. kiss kiss! ✨"
+                    ];
+                    
+                    function sendVirtualKiss(e) {
+                        e.preventDefault();
+                        const randomMsg = kissMessages[Math.floor(Math.random() * kissMessages.length)];
+                        feedbackEl.innerHTML = `💋❤️ ${randomMsg} ❤️💋`;
+                        feedbackEl.style.background = "#ffe6f0";
+                        feedbackEl.style.padding = "0.8rem";
+                        feedbackEl.style.borderRadius = "60px";
+                        feedbackEl.style.transition = "0.2s";
+                        feedbackEl.style.border = "2px solid #ff4d6d";
+                        feedbackEl.style.boxShadow = "0 0 20px #ffb3c6";
+                        
+                        for (let i = 0; i < 8; i++) {
+                            createBurstEmoji(i % 3 === 0 ? '❤️' : '💋');
+                        }
+                    }
+                    
+                    kissBtn.addEventListener('click', sendVirtualKiss);
+                    kissBtn.addEventListener('touchend', sendVirtualKiss);
+                }
+                
+                // Initialize feedback style
+                if (feedbackEl) {
+                    feedbackEl.style.background = "rgba(255, 230, 242, 0.7)";
+                    feedbackEl.style.borderRadius = "50px";
+                    feedbackEl.style.padding = "0.6rem";
+                }
+                
+                console.log("💋❤️ Happy Kiss Day Abha! — ready to unlock with love. ❤️💋");
+            });
+        })();
+    </script>
+</body>
+</html>
